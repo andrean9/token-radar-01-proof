@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Token Radar</h1>
+    <p class="sub">Pre-token protocols, ranked by what a launch would be worth — and how to farm each one.</p>
+    <p class="meta" id="meta"></p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="model">
+    <strong>Value model.</strong>
+    <span>implied = 0.35 × TVL × growth × maturity, where growth follows the 7-day TVL change and maturity follows how long the protocol has run with no token recorded. Every figure comes from the snapshot; no protocol is named by hand. Implied values are this entry's own claim.</span>
+  </section>
+  <section class="controls" id="controls">
+    <label>Search <input id="q" type="search" placeholder="Protocol name or slug"></label>
+    <label>Category <select id="cat"><option value="">All categories</option></select></label>
+    <label>Sort <select id="sort">
+      <option value="rank">By rank</option>
+      <option value="tvl">By TVL</option>
+      <option value="change">By 7-day change</option>
+    </select></label>
+    <span class="count" id="count"></span>
+  </section>
+  <section class="detail" id="detail" hidden></section>
+  <section id="board-wrap">
+    <table class="board" id="board">
+      <thead>
+        <tr><th>Rank</th><th>Protocol</th><th>Category</th><th>TVL</th><th>7d</th><th>Implied value</th><th></th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+  <footer class="foot">
+    <p>“No token” means the snapshot records no token for the protocol — not proof it has none. Wrapped, staked and bridged products of tokens that already trade are left out. Snapshot date and source are shown above.</p>
+  </footer>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
